@@ -1,1 +1,0 @@
-az deployment group create --resource-group "<Test-Resource>" --template-file "<template.json>" --parameters appId="<Test_id_bot>" appSecret="<Welcome2021!>" botId="<CloudSQLBot>" newWebAppName="<CloudSQLBotApp>" newAppServicePlanName="<CloudBotAppService>" newAppServicePlanLocation="<East US2>" --name "<CloudBotSQLBot>"
