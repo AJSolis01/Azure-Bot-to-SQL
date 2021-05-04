@@ -13,7 +13,7 @@
             "type": "String"
         },
         "servers_cloudcomputeserver_name": {
-            "defaultValue": "cloudcomputeserver",
+            "defaultValue": "IScloudcomputeserver",
             "type": "String"
         },
         "serverfarms_cloudcomputebot_name": {
@@ -21,7 +21,7 @@
             "type": "String"
         },
         "botServices_cloudcomputebot_name": {
-            "defaultValue": "cloudcomputebot",
+            "defaultValue": "IScloudcomputebot",
             "type": "String"
         }
     },
