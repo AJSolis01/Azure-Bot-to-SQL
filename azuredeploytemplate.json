@@ -5,12 +5,12 @@
         "channels_WebChatChannel_enablePreview": {
             "type": "Bool"
         },
-        "serverfarms_cloudcomputebot_name": {
-            "defaultValue": "cloudcomputebot",
+        "serverfarms_AzureCloudBotSQLFarm_name": {
+            "defaultValue": "AzureCloudBotSQLFarm",
             "type": "String"
         },
-        "botServices_cloudcomputebot_name": {
-            "defaultValue": "cloudcomputebot",
+        "botServices_ISITAzureCloudBotSQLService_name": {
+            "defaultValue": "ISITAzureCloudBotSQLService",
             "type": "String"
         }
     },
