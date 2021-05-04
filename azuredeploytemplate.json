@@ -53,6 +53,7 @@
             "kind": "v12.0",
             "properties": {
                 "administratorLogin": "username",
+                 "administratorLoginPassword": "Password",
                 "version": "12.0",
                 "publicNetworkAccess": "Enabled"
             }
