@@ -9,19 +9,19 @@
             "type": "SecureString"
         },
         "sites_cloudcomputebot_name": {
-            "defaultValue": "cloudcomputebot",
+            "defaultValue": "ISCloudBotSite",
             "type": "String"
         },
         "servers_cloudcomputeserver_name": {
-            "defaultValue": "cloudcomputeserver",
+            "defaultValue": "ISCloudBotServer",
             "type": "String"
         },
         "serverfarms_cloudcomputebot_name": {
-            "defaultValue": "cloudcomputebot",
+            "defaultValue": "ISCloudBotFarm",
             "type": "String"
         },
         "botServices_cloudcomputebot_name": {
-            "defaultValue": "cloudcomputebot",
+            "defaultValue": "ISCloudBotService",
             "type": "String"
         }
     },
@@ -53,6 +53,7 @@
             "kind": "v12.0",
             "properties": {
                 "administratorLogin": "username",
+                "administratorPassword": "Welcome2021!",
                 "version": "12.0",
                 "publicNetworkAccess": "Enabled"
             }
