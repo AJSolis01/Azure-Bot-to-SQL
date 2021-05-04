@@ -13,7 +13,7 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
 
 ## What Services Are Used:
  - Web App Bot
- -- Test
+ 
  - SQL Server
  - App Service
 
@@ -25,7 +25,12 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
  - Security
 
 ## Future Revisions:
- - 
+
+
++ **publicIPAddresses**: Public IP address for NAT gateway.
++ **natGateways**: NAT gateway resource
++ **virtualNetworks**: Virtual network for NAT gateway.
+  + **subnets**: Subnet for virtual network for NAT gateway.
 
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAJSolis01%2FAzure-Bot-to-SQL%2Fmain%2Fazuredeploytemplate.json)  
