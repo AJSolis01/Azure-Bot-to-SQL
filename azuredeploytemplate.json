@@ -365,10 +365,6 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudcomputeserver_name'))]"
             ],
-            "properties": {
-                "startIpAddress": "184.17.94.186",
-                "endIpAddress": "184.17.94.186"
-            }
         },
         {
             "type": "Microsoft.Sql/servers/firewallRules",
