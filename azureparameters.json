@@ -18,7 +18,7 @@
             "value": "Cloud-Bot-Farm"
         },
         "botServices_cloudcomputebot_name": {
-            "value": "Cloud-Bot-Service"
+            "value": "CloudBotService"
         }
     }
 }
