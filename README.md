@@ -18,6 +18,7 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
 
 ## Microsoft Azure Well-Architected Framework:
  + **Cost Optimization**
+   + **subnets**: Subnet for virtual network for NAT gateway.
  + **Operational Excellence**
  + **Performance Efficiency**
  + **Reliability**
