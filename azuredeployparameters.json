@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "channels_WebChatChannel_enablePreview": {
+            "value": null
+        },
+        "serverfarms_cloudcomputebot_name": {
+            "value": null
+        },
+        "botServices_cloudcomputebot_name": {
+            "value": null
+        }
+    }
+}
