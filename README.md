@@ -13,6 +13,7 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
 
 ## What Services Are Used:
  - Web App Bot
+ -- Test
  - SQL Server
  - App Service
 
