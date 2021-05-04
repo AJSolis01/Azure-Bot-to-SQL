@@ -2,49 +2,16 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "channels_WebChatChannel_enablePreview": {
-            "type": "Bool"
-        },
         "vulnerabilityAssessments_Default_storageContainerPath": {
             "type": "SecureString"
         },
-        "sites_cloudcomputebot_name": {
-            "defaultValue": "ISCloudBotSite",
-            "type": "String"
-        },
         "servers_cloudcomputeserver_name": {
-            "defaultValue": "ISCloudBotServer",
-            "type": "String"
-        },
-        "serverfarms_cloudcomputebot_name": {
-            "defaultValue": "ISCloudBotFarm",
-            "type": "String"
-        },
-        "botServices_cloudcomputebot_name": {
-            "defaultValue": "ISCloudBotService",
+            "defaultValue": "cloudcomputeserver",
             "type": "String"
         }
     },
     "variables": {},
     "resources": [
-        {
-            "type": "Microsoft.BotService/botServices",
-            "apiVersion": "2020-06-02",
-            "name": "[parameters('botServices_cloudcomputebot_name')]",
-            "location": "global",
-            "sku": {
-                "name": "F0"
-            },
-            "kind": "sdk",
-            "properties": {
-                "displayName": "[parameters('botServices_cloudcomputebot_name')]",
-                "iconUrl": "https://docs.botframework.com/static/devportal/client/images/bot-framework-default.png",
-                "endpoint": "[concat('https://', parameters('botServices_cloudcomputebot_name'), '.azurewebsites.net/api/messages')]",
-                "msaAppId": "b5dcfcf3-57e0-4b72-b6a9-bab80835d5c0",
-                "luisAppIds": [],
-                "isCmekEnabled": false
-            }
-        },
         {
             "type": "Microsoft.Sql/servers",
             "apiVersion": "2020-08-01-preview",
@@ -53,54 +20,8 @@
             "kind": "v12.0",
             "properties": {
                 "administratorLogin": "username",
-                "administratorPassword": "Welcome2021!",
                 "version": "12.0",
                 "publicNetworkAccess": "Enabled"
-            }
-        },
-        {
-            "type": "Microsoft.Web/serverfarms",
-            "apiVersion": "2018-02-01",
-            "name": "[parameters('serverfarms_cloudcomputebot_name')]",
-            "location": "East US",
-            "sku": {
-                "name": "S1",
-                "tier": "Standard",
-                "size": "S1",
-                "family": "S",
-                "capacity": 1
-            },
-            "kind": "app",
-            "properties": {
-                "perSiteScaling": false,
-                "maximumElasticWorkerCount": 1,
-                "isSpot": false,
-                "reserved": false,
-                "isXenon": false,
-                "hyperV": false,
-                "targetWorkerCount": 0,
-                "targetWorkerSizeId": 0
-            }
-        },
-        {
-            "type": "Microsoft.BotService/botServices/channels",
-            "apiVersion": "2020-06-02",
-            "name": "[concat(parameters('botServices_cloudcomputebot_name'), '/WebChatChannel')]",
-            "location": "global",
-            "dependsOn": [
-                "[resourceId('Microsoft.BotService/botServices', parameters('botServices_cloudcomputebot_name'))]"
-            ],
-            "properties": {
-                "properties": {
-                    "sites": [
-                        {
-                            "siteName": "Default Site",
-                            "isEnabled": true,
-                            "enablePreview": "[parameters('channels_WebChatChannel_enablePreview')]"
-                        }
-                    ]
-                },
-                "channelName": "WebChatChannel"
             }
         },
         {
@@ -178,6 +99,7 @@
                 "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudcomputeserver_name'))]"
             ],
             "properties": {
+                "isDevopsAuditEnabled": false,
                 "retentionDays": 0,
                 "auditActionsAndGroups": [],
                 "isStorageSecondaryKeyInUse": false,
@@ -338,6 +260,7 @@
                 "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudcomputeserver_name'))]"
             ],
             "properties": {
+                "isDevopsAuditEnabled": false,
                 "retentionDays": 0,
                 "auditActionsAndGroups": [],
                 "isStorageSecondaryKeyInUse": false,
@@ -365,6 +288,10 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudcomputeserver_name'))]"
             ],
+            "properties": {
+                "startIpAddress": "184.17.94.186",
+                "endIpAddress": "184.17.94.186"
+            }
         },
         {
             "type": "Microsoft.Sql/servers/firewallRules",
@@ -414,197 +341,6 @@
                     "emailSubscriptionAdmins": true
                 },
                 "storageContainerPath": "[parameters('vulnerabilityAssessments_Default_storageContainerPath')]"
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites",
-            "apiVersion": "2018-11-01",
-            "name": "[parameters('sites_cloudcomputebot_name')]",
-            "location": "East US",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_cloudcomputebot_name'))]"
-            ],
-            "kind": "app",
-            "properties": {
-                "enabled": true,
-                "hostNameSslStates": [
-                    {
-                        "name": "[concat(parameters('sites_cloudcomputebot_name'), '.azurewebsites.net')]",
-                        "sslState": "Disabled",
-                        "hostType": "Standard"
-                    },
-                    {
-                        "name": "[concat(parameters('sites_cloudcomputebot_name'), '.scm.azurewebsites.net')]",
-                        "sslState": "Disabled",
-                        "hostType": "Repository"
-                    }
-                ],
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_cloudcomputebot_name'))]",
-                "reserved": false,
-                "isXenon": false,
-                "hyperV": false,
-                "siteConfig": {},
-                "scmSiteAlsoStopped": false,
-                "clientAffinityEnabled": true,
-                "clientCertEnabled": false,
-                "hostNamesDisabled": false,
-                "containerSize": 0,
-                "dailyMemoryTimeQuota": 0,
-                "httpsOnly": false,
-                "redundancyMode": "None"
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/config",
-            "apiVersion": "2018-11-01",
-            "name": "[concat(parameters('sites_cloudcomputebot_name'), '/web')]",
-            "location": "East US",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudcomputebot_name'))]"
-            ],
-            "properties": {
-                "numberOfWorkers": 1,
-                "defaultDocuments": [
-                    "Default.htm",
-                    "Default.html",
-                    "Default.asp",
-                    "index.htm",
-                    "index.html",
-                    "iisstart.htm",
-                    "default.aspx",
-                    "index.php",
-                    "hostingstart.html"
-                ],
-                "netFrameworkVersion": "v4.0",
-                "phpVersion": "5.6",
-                "requestTracingEnabled": false,
-                "remoteDebuggingEnabled": false,
-                "remoteDebuggingVersion": "VS2019",
-                "httpLoggingEnabled": false,
-                "logsDirectorySizeLimit": 35,
-                "detailedErrorLoggingEnabled": false,
-                "publishingUsername": "$cloudcomputebot",
-                "azureStorageAccounts": {},
-                "scmType": "None",
-                "use32BitWorkerProcess": true,
-                "webSocketsEnabled": true,
-                "alwaysOn": false,
-                "managedPipelineMode": "Integrated",
-                "virtualApplications": [
-                    {
-                        "virtualPath": "/",
-                        "physicalPath": "site\\wwwroot",
-                        "preloadEnabled": false
-                    }
-                ],
-                "loadBalancing": "LeastRequests",
-                "experiments": {
-                    "rampUpRules": []
-                },
-                "autoHealEnabled": false,
-                "cors": {
-                    "allowedOrigins": [
-                        "https://portal.azure.com",
-                        "https://botservice.hosting.portal.azure.net",
-                        "https://botservice-ms.hosting.portal.azure.net",
-                        "https://hosting.onecloud.azure-test.net/"
-                    ],
-                    "supportCredentials": false
-                },
-                "localMySqlEnabled": false,
-                "ipSecurityRestrictions": [
-                    {
-                        "ipAddress": "Any",
-                        "action": "Allow",
-                        "priority": 1,
-                        "name": "Allow all",
-                        "description": "Allow all access"
-                    }
-                ],
-                "scmIpSecurityRestrictions": [
-                    {
-                        "ipAddress": "Any",
-                        "action": "Allow",
-                        "priority": 1,
-                        "name": "Allow all",
-                        "description": "Allow all access"
-                    }
-                ],
-                "scmIpSecurityRestrictionsUseMain": false,
-                "http20Enabled": false,
-                "minTlsVersion": "1.2",
-                "ftpsState": "AllAllowed",
-                "reservedInstanceCount": 0
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/deployments",
-            "apiVersion": "2018-11-01",
-            "name": "[concat(parameters('sites_cloudcomputebot_name'), '/0fbc457c3acc4557bd46fc98e7c27eaa')]",
-            "location": "East US",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudcomputebot_name'))]"
-            ],
-            "properties": {
-                "status": 4,
-                "author_email": "N/A",
-                "author": "VS Code",
-                "deployer": "ZipDeploy",
-                "message": "Created via a push deployment",
-                "start_time": "2021-04-21T21:01:02.7452705Z",
-                "end_time": "2021-04-21T21:01:14.9540228Z",
-                "active": false
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/deployments",
-            "apiVersion": "2018-11-01",
-            "name": "[concat(parameters('sites_cloudcomputebot_name'), '/1612388de5eb442caa584d282f9aa1f9')]",
-            "location": "East US",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudcomputebot_name'))]"
-            ],
-            "properties": {
-                "status": 4,
-                "author_email": "N/A",
-                "author": "VS Code",
-                "deployer": "ZipDeploy",
-                "message": "Created via a push deployment",
-                "start_time": "2021-04-26T23:47:26.7369457Z",
-                "end_time": "2021-04-26T23:47:30.8827731Z",
-                "active": false
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/deployments",
-            "apiVersion": "2018-11-01",
-            "name": "[concat(parameters('sites_cloudcomputebot_name'), '/c811d07b4f074b2d9a72eb7193b17414')]",
-            "location": "East US",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudcomputebot_name'))]"
-            ],
-            "properties": {
-                "status": 4,
-                "author_email": "N/A",
-                "author": "VS Code",
-                "deployer": "ZipDeploy",
-                "message": "Created via a push deployment",
-                "start_time": "2021-04-26T23:53:10.3744042Z",
-                "end_time": "2021-04-26T23:53:13.171375Z",
-                "active": true
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/hostNameBindings",
-            "apiVersion": "2018-11-01",
-            "name": "[concat(parameters('sites_cloudcomputebot_name'), '/', parameters('sites_cloudcomputebot_name'), '.azurewebsites.net')]",
-            "location": "East US",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudcomputebot_name'))]"
-            ],
-            "properties": {
-                "siteName": "cloudcomputebot",
-                "hostNameType": "Verified"
             }
         },
         {
