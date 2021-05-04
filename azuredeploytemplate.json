@@ -9,19 +9,19 @@
             "type": "SecureString"
         },
         "sites_cloudcomputebot_name": {
-            "defaultValue": "cloudcomputebot",
+            "defaultValue": "AzureCloudBotSQL",
             "type": "String"
         },
         "servers_cloudcomputeserver_name": {
-            "defaultValue": "cloudcomputeserver",
+            "defaultValue": "AzureCloudBotSQLServer",
             "type": "String"
         },
         "serverfarms_cloudcomputebot_name": {
-            "defaultValue": "cloudcomputebot",
+            "defaultValue": "AzureCloudBotSQLFarm",
             "type": "String"
         },
         "botServices_cloudcomputebot_name": {
-            "defaultValue": "cloudcomputebot",
+            "defaultValue": "AzureCloudBotSQLService",
             "type": "String"
         }
     },
