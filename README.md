@@ -16,9 +16,15 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
  2. SQL Server
  3. App Service
 
-## 5 Pillars of the Azure Well Architected Framework:
+## Microsoft Azure Well-Architected Framework:
+ 1. Cost Optimization
+ 2. Operational Execellence
+ 3. Performance Efficiency
+ 4. Reliability
+ 5. Security
 
 ## Future Revisions:
+ 1.
 
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAJSolis01%2FAzure-Bot-to-SQL%2Fmain%2Fazuredeploytemplate.json)  
