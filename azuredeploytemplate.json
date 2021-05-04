@@ -21,7 +21,7 @@
             "type": "String"
         },
         "botServices_cloudcomputebot_name": {
-            "defaultValue": "AzureCloudBotSQLService",
+            "defaultValue": "ISITAzureCloudBotSQLService",
             "type": "String"
         }
     },
