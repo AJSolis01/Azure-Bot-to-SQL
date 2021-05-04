@@ -3,6 +3,10 @@
 
 This template allows you to deploy a Echo Bot using C# template and creates a Azure SQL Server with pre-defined SQL table. This template sets the messaging scale set to F0 with 10K premium messages. The C# Echo Bot will reach out to the SQL Server via a connection string that is associated in the EchoBot.cs file in the code. Change the code to match your SQL Server connection string.
 
+##Visio Diagram:
+![Visio Diagram](https://user-images.githubusercontent.com/57882033/116954783-e8594580-ac5e-11eb-83fd-bca1498768a1.jpeg)
+
+
 ## Data Flow:
 ![Data-Diagram](https://user-images.githubusercontent.com/57882033/116953794-2a34bc80-ac5c-11eb-8c38-bc888731c070.jpeg)
 
