@@ -20,7 +20,7 @@
             "defaultValue": "AzureCloudBotSQLFarm",
             "type": "String"
         },
-        "botServices_cloudcomputebot_name": {
+        "botServices_ISITAzureCloudBotSQLService_name": {
             "defaultValue": "ISITAzureCloudBotSQLService",
             "type": "String"
         }
@@ -30,16 +30,16 @@
         {
             "type": "Microsoft.BotService/botServices",
             "apiVersion": "2020-06-02",
-            "name": "[parameters('botServices_cloudcomputebot_name')]",
+            "name": "[parameters('botServices_ISITAzureCloudBotSQLService_name')]",
             "location": "global",
             "sku": {
                 "name": "F0"
             },
             "kind": "sdk",
             "properties": {
-                "displayName": "[parameters('botServices_cloudcomputebot_name')]",
+                "displayName": "[parameters('botServices_ISITAzureCloudBotSQLService_name')]",
                 "iconUrl": "https://docs.botframework.com/static/devportal/client/images/bot-framework-default.png",
-                "endpoint": "[concat('https://', parameters('botServices_cloudcomputebot_name'), '.azurewebsites.net/api/messages')]",
+                "endpoint": "[concat('https://', parameters('botServices_ISITAzureCloudBotSQLService_name'), '.azurewebsites.net/api/messages')]",
                 "msaAppId": "b5dcfcf3-57e0-4b72-b6a9-bab80835d5c0",
                 "luisAppIds": [],
                 "isCmekEnabled": false
@@ -85,10 +85,10 @@
         {
             "type": "Microsoft.BotService/botServices/channels",
             "apiVersion": "2020-06-02",
-            "name": "[concat(parameters('botServices_cloudcomputebot_name'), '/WebChatChannel')]",
+            "name": "[concat(parameters('botServices_ISITAzureCloudBotSQLService_name'), '/WebChatChannel')]",
             "location": "global",
             "dependsOn": [
-                "[resourceId('Microsoft.BotService/botServices', parameters('botServices_cloudcomputebot_name'))]"
+                "[resourceId('Microsoft.BotService/botServices', parameters('botServices_ISITAzureCloudBotSQLService_name'))]"
             ],
             "properties": {
                 "properties": {
