@@ -557,44 +557,6 @@
             }
         },
         {
-            "type": "Microsoft.Web/sites/deployments",
-            "apiVersion": "2018-11-01",
-            "name": "[concat(parameters('sites_cloudcomputebot_name'), '/1612388de5eb442caa584d282f9aa1f9')]",
-            "location": "East US",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudcomputebot_name'))]"
-            ],
-            "properties": {
-                "status": 4,
-                "author_email": "N/A",
-                "author": "VS Code",
-                "deployer": "ZipDeploy",
-                "message": "Created via a push deployment",
-                "start_time": "2021-04-26T23:47:26.7369457Z",
-                "end_time": "2021-04-26T23:47:30.8827731Z",
-                "active": false
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites/deployments",
-            "apiVersion": "2018-11-01",
-            "name": "[concat(parameters('sites_cloudcomputebot_name'), '/c811d07b4f074b2d9a72eb7193b17414')]",
-            "location": "East US",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudcomputebot_name'))]"
-            ],
-            "properties": {
-                "status": 4,
-                "author_email": "N/A",
-                "author": "VS Code",
-                "deployer": "ZipDeploy",
-                "message": "Created via a push deployment",
-                "start_time": "2021-04-26T23:53:10.3744042Z",
-                "end_time": "2021-04-26T23:53:13.171375Z",
-                "active": true
-            }
-        },
-        {
             "type": "Microsoft.Web/sites/hostNameBindings",
             "apiVersion": "2018-11-01",
             "name": "[concat(parameters('sites_cloudcomputebot_name'), '/', parameters('sites_cloudcomputebot_name'), '.azurewebsites.net')]",
