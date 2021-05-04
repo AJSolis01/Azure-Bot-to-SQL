@@ -9,16 +9,16 @@
             "value": null
         },
         "sites_cloudcomputebot_name": {
-            "value": null
+            "value": "ISCloudBotSite"
         },
         "servers_cloudcomputeserver_name": {
-            "value": null
+            "value": "ISCloudBotServer"
         },
         "serverfarms_cloudcomputebot_name": {
-            "value": null
+            "value": "IsCloudBotFarm"
         },
         "botServices_cloudcomputebot_name": {
-            "value": null
+            "value": "ISCloudBotService"
         }
     }
 }
