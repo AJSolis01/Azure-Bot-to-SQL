@@ -18,7 +18,7 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
 
 ## Microsoft Azure Well-Architected Framework:
  + **Cost Optimization**
-   + **subnets**: Subnet for virtual network for NAT gateway.
+   + **subnets**
  + **Operational Excellence**
  + **Performance Efficiency**
  + **Reliability**
@@ -26,11 +26,6 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
 
 ## Future Revisions:
 
-
-+ **publicIPAddresses**: Public IP address for NAT gateway.
-+ **natGateways**: NAT gateway resource
-+ **virtualNetworks**: Virtual network for NAT gateway.
-  + **subnets**: Subnet for virtual network for NAT gateway.
 
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAJSolis01%2FAzure-Bot-to-SQL%2Fmain%2Fazuredeploytemplate.json)  
