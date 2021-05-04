@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "channels_WebChatChannel_enablePreview": {
-            "value": null
+            "value": "CloudBotChanell"
         },
         "serverfarms_cloudcomputebot_name": {
-            "value": null
+            "value": "CloudBotServerFarm"
         },
         "botServices_cloudcomputebot_name": {
-            "value": null
+            "value": "CloudBotService"
         }
     }
 }
