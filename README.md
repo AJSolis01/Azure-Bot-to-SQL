@@ -12,8 +12,8 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
 
 ## What Services Are Used:
  1. Web App Bot
-##### SQL Server
-##### App Service
+ 2. SQL Server
+ 3. App Service
 
 ## 5 Pillars of the Azure Well Architected Framework:
 
