@@ -34,4 +34,6 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
  + Have the Bot communicate more frequently, only responds to input.
  + Include an image of carrier when receiving response.
 
-
+## How to Deploy: 
+ +Download the zip file from Github
+ +
