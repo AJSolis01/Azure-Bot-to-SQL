@@ -42,9 +42,9 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
  + Login to your azure portal and navigate 
  + Enter the code below to enter data into the database
 
-'code'
+`code`
 INSERT INTO [dbo].[Tracking] VALUES (1, 'Austin', 'Solis', 'Fort Wayne', 'Indiana')
 INSERT INTO [dbo].[Tracking] VALUES (1, 'User', 'Test1', 'Chicago', 'Illinois')
 INSERT INTO [dbo].[Tracking] VALUES (1, 'User', 'Test2', 'Denver', 'Colorado')
-'code'
+`code`
 
