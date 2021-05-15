@@ -44,9 +44,7 @@ This template allows you to deploy a Echo Bot using C# template and creates a Az
  
 `
 INSERT INTO [dbo].[Tracking] VALUES (1, 'Austin', 'Solis', 'Fort Wayne', 'Indiana')
-
 INSERT INTO [dbo].[Tracking] VALUES (1, 'User', 'Test1', 'Chicago', 'Illinois')
-
 INSERT INTO [dbo].[Tracking] VALUES (1, 'User', 'Test2', 'Denver', 'Colorado')
 `
 
